@@ -43,25 +43,31 @@ public class ThumbCreator extends CordovaPlugin {
 
     private static String thumbnail(String originImage, String thumbDir, int scaleWidth, int scaleHeight, int quality) throws IOException, FileNotFoundException {
 
-        BitmapFactory.Options options = new BitmapFactory.Options();
-        options.inPreferredConfig = Bitmap.Config.RGB_565;
-        Bitmap bitmap = BitmapFactory.decodeFile(originImage, options);
-        Log.d("thumbnail origin", originImage);
-
-        File file = new File(originImage);
-        Bitmap thumbBmp = ThumbnailUtils.extractThumbnail(bitmap, scaleWidth, scaleHeight);
-
-        OutputStream fOut = null;
         File folder = new File(thumbDir);
-        Log.d("thumbnail thumbDir", thumbDir);
         if (!folder.exists()) {
             Log.d("thumb folder not exist", "");
             folder.mkdir();
         }
+
+        File file = new File(originImage);
         File targetFile = new File(thumbDir + "_thumb_" + file.getName());
         Log.d("targetFile ", thumbDir + "_thumb_" + file.getName());
         Log.d("file exist: ", String.valueOf(targetFile.exists()));
         if (!targetFile.exists()) {
+
+            BitmapFactory.Options options = new BitmapFactory.Options();
+            options.inPreferredConfig = Bitmap.Config.RGB_565;
+            Bitmap bitmap = BitmapFactory.decodeFile(originImage, options);
+            Log.d("thumbnail origin", originImage);
+
+            
+            // Bitmap thumbBmp = ThumbnailUtils.extractThumbnail(bitmap, scaleWidth, scaleHeight);
+            Bitmap thumbBmp = Bitmap.createScaledBitmap(bitmap, scaleWidth, scaleHeight, true);
+            
+            OutputStream fOut = null;
+            
+            Log.d("thumbnaile thumbDir", thumbDir);
+
             Log.d("create new file", thumbDir + "_thumb_" + file.getName());
             targetFile.createNewFile();
             Log.d("create done", "thumb");
