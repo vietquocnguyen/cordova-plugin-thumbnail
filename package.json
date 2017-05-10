@@ -4,8 +4,8 @@
   "cordova_name": "Thumbnail Plugin",
   "description": "Thumbnail Plugin",
   "license": "Apache 2.0",
-  "repo": "https://github.com/sxxymzy/cordova-plugin-thumbnail.git",
-  "issue": "https://github.com/sxxymzy/cordova-plugin-thumbnail/issues",
+  "repo": "https://github.com/vietquocnguyen/cordova-plugin-thumbnail.git",
+  "issue": "https://github.com/vietquocnguyen/cordova-plugin-thumbnail/issues",
   "keywords": [
     "ecosystem:cordova",
     "cordova-android",
@@ -19,12 +19,12 @@
   "englishdoc": "",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sxxymzy/cordova-plugin-thumbnail.git"
+    "url": "git+https://github.com/vietquocnguyen/cordova-plugin-thumbnail.git"
   },
   "bugs": {
-    "url": "https://github.com/sxxymzy/cordova-plugin-thumbnail/issues"
+    "url": "https://github.com/vietquocnguyen/cordova-plugin-thumbnail/issues"
   },
-  "homepage": "https://github.com/sxxymzy/cordova-plugin-thumbnail#readme",
+  "homepage": "https://github.com/vietquocnguyen/cordova-plugin-thumbnail#readme",
   "cordova": {
     "id": "cordova-plugin-gallery-thumbnail",
     "platforms": [
